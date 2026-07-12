@@ -1,0 +1,8 @@
+{
+  "name": "@vyben/pinned-codex-cli",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@openai/codex": "0.144.1"
+  }
+}

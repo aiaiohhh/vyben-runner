@@ -1,0 +1,33 @@
+name: Vyben remote coding runner
+description: Runs one OIDC-authenticated Vyben coding job without repository write credentials
+author: Vyben
+
+inputs:
+  mode:
+    description: run for the read-only agent job or finalize for the isolated write job
+    required: false
+    default: run
+  job-id:
+    description: UUID of the pre-authorized Vyben job
+    required: true
+  artifact-path:
+    description: Downloaded run artifact directory; required only in finalize mode
+    required: false
+  github-token:
+    description: Fresh-job GITHUB_TOKEN; required only in finalize mode and never exposed to the agent
+    required: false
+
+outputs:
+  status:
+    description: Runner outcome
+  artifact-path:
+    description: Directory containing the bounded patch, result, and integrity metadata
+  head-sha:
+    description: Finalized commit SHA; set only in finalize mode
+runs:
+  using: node24
+  main: dist/src/index.js
+
+branding:
+  icon: terminal
+  color: green
