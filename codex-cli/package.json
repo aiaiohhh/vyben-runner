@@ -3,6 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@openai/codex": "0.144.1"
+    "@openai/codex": "0.144.6"
   }
 }
